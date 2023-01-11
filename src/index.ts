@@ -1,7 +1,8 @@
 import { App } from 'vue';
 import VQrCodeVue from './components/VQrCode.vue';
+import { RenderOptions } from './draw';
 import { ErrorCorrectLevel } from './qrcode/ErrorCorrectLevel';
-import { VQrcodeOptions, VQrcodeRenderOptions } from './types';
+import { VQrcodeOptions } from './types';
 
 export default {
     install: (
@@ -11,7 +12,7 @@ export default {
             colorDark: '#000000',
             colorLight: '#ffffff',
             correctLevel: ErrorCorrectLevel.M,
-            render: VQrcodeRenderOptions.SVG,
+            render: RenderOptions.SVG,
         }
     ) => {
         app.component('VQrcode', VQrCodeVue);
@@ -20,3 +21,5 @@ export default {
 };
 
 export { VQrCodeVue as VQrcode };
+export { RenderOptions };
+export { ErrorCorrectLevel };

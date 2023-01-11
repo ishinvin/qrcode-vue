@@ -1,11 +1,11 @@
-import { QRCode } from '../qrcode/QRCode';
-import { VQrcodeOptions } from '../types/index';
+import { type QRCode } from '../qrcode/QRCode';
+import { type VQrcodeDrawingOptions } from '../types';
 
 export class DrawCanvas {
     private el: HTMLElement;
-    private options: VQrcodeOptions;
+    private options: VQrcodeDrawingOptions;
 
-    constructor(el: HTMLElement, options: VQrcodeOptions) {
+    constructor(el: HTMLElement, options: VQrcodeDrawingOptions) {
         this.el = el;
         this.options = options;
     }

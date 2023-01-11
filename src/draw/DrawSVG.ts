@@ -1,12 +1,21 @@
-import { SVGAttributes } from 'vue';
-import { QRCode } from '../qrcode/QRCode';
-import { type VQrcodeOptions } from '../types';
+import { type QRCode } from '../qrcode/QRCode';
+import { type VQrcodeDrawingOptions } from '../types';
+
+type SVGAttributes = {
+    viewBox?: string;
+    width?: string;
+    height?: string;
+    fill?: string;
+    id?: string;
+    x?: string;
+    y?: string;
+};
 
 export class DrawSVG {
     private el: HTMLElement;
-    private options: VQrcodeOptions;
+    private options: VQrcodeDrawingOptions;
 
-    constructor(el: HTMLElement, options: VQrcodeOptions) {
+    constructor(el: HTMLElement, options: VQrcodeDrawingOptions) {
         this.el = el;
         this.options = options;
     }
