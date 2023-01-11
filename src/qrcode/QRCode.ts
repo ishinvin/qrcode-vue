@@ -16,7 +16,6 @@
 //---------------------------------------------------------------------
 
 import { GIFImage } from '../image/GIFImage';
-// import { stringToBytes_SJIS } from '../text/stringToBytes_SJIS';
 import { stringToBytes_UTF8 } from '../text/stringToBytes_UTF8';
 import { BitBuffer } from './BitBuffer';
 import { ErrorCorrectLevel } from './ErrorCorrectLevel';
@@ -102,6 +101,33 @@ export class QRCode {
     }
 
     public make(): void {
+        if (this.typeNumber < 1) {
+            let typeNumber = 1;
+
+            for (; typeNumber < 40; typeNumber++) {
+                const rsBlocks = RSBlock.getRSBlocks(typeNumber, this.errorCorrectLevel);
+                const buffer = new BitBuffer();
+
+                for (let i = 0; i < this.qrDataList.length; i++) {
+                    const data = this.qrDataList[i];
+                    buffer.put(data.getMode(), 4);
+                    buffer.put(data.getLength(), data.getLengthInBits(typeNumber));
+                    data.write(buffer);
+                }
+
+                let totalDataCount = 0;
+                for (let i = 0; i < rsBlocks.length; i++) {
+                    totalDataCount += rsBlocks[i].getDataCount();
+                }
+
+                if (buffer.getLengthInBits() <= totalDataCount * 8) {
+                    break;
+                }
+            }
+
+            this.typeNumber = typeNumber;
+        }
+
         this.makeImpl(false, this.getBestMaskPattern());
     }
 

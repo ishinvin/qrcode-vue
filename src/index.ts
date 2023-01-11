@@ -1,24 +1,17 @@
 import { App } from 'vue';
 import VQrCodeVue from './components/VQrCode.vue';
 import { ErrorCorrectLevel } from './qrcode/ErrorCorrectLevel';
-
-export type VQrcodeOptions = {
-    width?: number;
-    height?: number;
-    colorDark?: string;
-    colorLight?: string;
-    correctLevel?: ErrorCorrectLevel;
-};
+import { VQrcodeOptions, VQrcodeRenderOptions } from './types';
 
 export default {
     install: (
         app: App,
-        options: VQrcodeOptions = {
-            width: 256,
-            height: 256,
+        options: Partial<VQrcodeOptions> = {
+            size: 200,
             colorDark: '#000000',
             colorLight: '#ffffff',
-            correctLevel: ErrorCorrectLevel.Q,
+            correctLevel: ErrorCorrectLevel.M,
+            render: VQrcodeRenderOptions.SVG,
         }
     ) => {
         app.component('VQrcode', VQrCodeVue);
