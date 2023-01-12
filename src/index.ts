@@ -12,7 +12,7 @@ export default {
             colorDark: '#000000',
             colorLight: '#ffffff',
             correctLevel: ErrorCorrectLevel.M,
-            render: RenderOptions.SVG,
+            render: RenderOptions.CANVAS,
         }
     ) => {
         app.component('VQrcode', VQrCodeVue);

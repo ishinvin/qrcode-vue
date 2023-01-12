@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, inject, onMounted, ref, watch } from 'vue';
+import { inject, onMounted, ref, watch } from 'vue';
 import { DrawCanvas, DrawHTML, DrawImage, DrawSVG, RenderOptions } from '../draw';
 import { ErrorCorrectLevel } from '../qrcode/ErrorCorrectLevel';
 import { QRCode } from '../qrcode/QRCode';
@@ -24,7 +24,7 @@ const getInjectOptions = (): VQrcodeOptions => {
         colorDark: '#000000',
         colorLight: '#ffffff',
         correctLevel: ErrorCorrectLevel.M,
-        render: RenderOptions.SVG,
+        render: RenderOptions.CANVAS,
     };
 };
 const injectOptions = getInjectOptions();
@@ -101,16 +101,8 @@ watch(
         makeQR(newText);
     }
 );
-
-const computedStyle = computed(() => {
-    const _size = props.text ? `${qrSize.value}px` : undefined;
-    return {
-        width: _size,
-        height: _size,
-    };
-});
 </script>
 
 <template>
-    <div ref="qrTag" :style="computedStyle"></div>
+    <div ref="qrTag"></div>
 </template>
