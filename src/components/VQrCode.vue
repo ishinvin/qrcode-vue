@@ -40,12 +40,10 @@ const getOptions = (): VQrcodeOptions => {
 
 const qrTag = ref<HTMLElement | null>(null);
 let drawing: DrawSVG | DrawCanvas | DrawHTML | DrawImage;
-const qrSize = ref(200);
 
 const makeQR = (text: string) => {
     if (text === undefined || text === '' || text === null) return;
     const options = getOptions();
-    qrSize.value = options.size;
 
     const qr = new QRCode();
     qr.setTypeNumber(0);
@@ -95,10 +93,13 @@ onMounted(() => {
 });
 
 watch(
-    () => props.text,
-    (newText) => {
+    () => props,
+    (newProps) => {
         clear();
-        makeQR(newText);
+        makeQR(newProps.text);
+    },
+    {
+        deep: true,
     }
 );
 </script>
