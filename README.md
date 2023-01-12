@@ -5,7 +5,7 @@ QR code implementation based on https://github.com/kazuhikoarase/qrcode-generato
 ## Installation
 
 ```sh
-npm i qrcode-vue
+npm i qrcode-vuejs
 ```
 
 ## Usage
