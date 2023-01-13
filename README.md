@@ -12,7 +12,7 @@ npm i qrcode-vuejs
 
 #### Import
 ```js
-import VQrcode, { ErrorCorrectLevel, RenderOptions } from 'qrcode-vue';
+import VQrcode, { ErrorCorrectLevel, RenderOptions } from 'qrcode-vuejs';
 ```
 #### Basic
 ```js
@@ -30,7 +30,7 @@ app.mount('#test');
 ```js
 // register component
 import { createApp } from 'vue';
-import VQrcode, { ErrorCorrectLevel, RenderOptions } from 'qrcode-vue';
+import VQrcode, { ErrorCorrectLevel, RenderOptions } from 'qrcode-vuejs';
 import TestView from './TestView.vue';
 
 const app = createApp(TestView);
@@ -57,7 +57,7 @@ app.mount('#test');
 ```js
 // Single-File Components
 <script setup lang="ts">
-import { VQrcode, RenderOptions, ErrorCorrectLevel } from 'qrcode-vue';
+import { VQrcode, RenderOptions, ErrorCorrectLevel } from 'qrcode-vuejs';
 </script>
 
 <template>
