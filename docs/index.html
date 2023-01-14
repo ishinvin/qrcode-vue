@@ -98,10 +98,10 @@
                             <label for="inputSize">
                                 <small>Size:</small>
                             </label>
-                            <input v-model="size" id="inputSize" type="range"
+                            <input v-model="qrSize" id="inputSize" type="range"
                                 min="100" max="600" step="10">
                             <div class="align-center" style="font-size: 14px;">
-                                &nbsp;({{size}})
+                                &nbsp;({{qrSize}})
                             </div>
                         </div>
                         <div class="d-flex align-center mb-3">
@@ -130,9 +130,9 @@
                             Download
                         </button>
                     </form>
-                    <div :style="{ width: `${size}px`, height: `${size}px`}"
+                    <div :style="{ width: `${qrSize}px`, height: `${qrSize}px`}"
                         class="align-center">
-                        <v-qrcode id="qrcodeVuejs" :text="text" :size="size"
+                        <v-qrcode id="qrcodeVuejs" :text="text" :size="qrSize"
                             :render="render" :color-dark="color"
                             :color-light="bgColor"
                             :correct-level="correctLevel" />
@@ -194,9 +194,8 @@
                 VQrcode
             },
             setup() {
-                // const qrcodeVuejs = ref(null)
                 const text = ref('qrcode-vuejs')
-                const size = ref(200)
+                const qrSize = ref(200)
                 const color = ref('#000000')
                 const bgColor = ref('#ffffff')
                 const render = ref(RenderOptions.CANVAS)
@@ -204,7 +203,7 @@
 
                 const reset = () => {
                     text.value = 'qrcode-vuejs'
-                    size.value = 200
+                    qrSize.value = 200
                     color.value = '#000000'
                     bgColor.value = '#ffffff'
                     render.value = RenderOptions.CANVAS
@@ -234,7 +233,7 @@
 
                 return {
                     text,
-                    size,
+                    qrSize,
                     color,
                     bgColor,
                     render,
