@@ -98,10 +98,10 @@
                             <label for="inputSize">
                                 <small>Size:</small>
                             </label>
-                            <input v-model="qrSize" id="inputSize" type="range"
+                            <input v-model="size" id="inputSize" type="range"
                                 min="100" max="600" step="10">
                             <div class="align-center" style="font-size: 14px;">
-                                &nbsp;({{qrSize}})
+                                &nbsp;({{size}})
                             </div>
                         </div>
                         <div class="d-flex align-center mb-3">
@@ -130,9 +130,9 @@
                             Download
                         </button>
                     </form>
-                    <div :style="{ width: `${qrSize}px`, height: `${qrSize}px`}"
+                    <div :style="{ width: `${size}px`, height: `${size}px`}"
                         class="align-center">
-                        <v-qrcode id="qrcodeVuejs" :text="text" :size="qrSize"
+                        <v-qrcode id="qrcodeVuejs" :text="text" :size="size"
                             :render="render" :color-dark="color"
                             :color-light="bgColor"
                             :correct-level="correctLevel" />
@@ -179,7 +179,7 @@
     <script type="importmap">
         {
           "imports": {
-            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js",
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
             "qrcode-vuejs": "https://unpkg.com/qrcode-vuejs@1.0.4/dist/index.es.js"
           }
         }
@@ -195,18 +195,18 @@
             },
             setup() {
                 const text = ref('qrcode-vuejs')
-                const qrSize = ref(200)
+                const size = ref(200)
                 const color = ref('#000000')
                 const bgColor = ref('#ffffff')
-                const render = ref(RenderOptions.CANVAS)
+                const render = ref(RenderOptions.SVG)
                 const correctLevel = ref(ErrorCorrectLevel.M)
 
                 const reset = () => {
                     text.value = 'qrcode-vuejs'
-                    qrSize.value = 200
+                    size.value = 200
                     color.value = '#000000'
                     bgColor.value = '#ffffff'
-                    render.value = RenderOptions.CANVAS
+                    render.value = RenderOptions.SVG
                     correctLevel.value = ErrorCorrectLevel.M
                 }
 
@@ -233,7 +233,7 @@
 
                 return {
                     text,
-                    qrSize,
+                    size,
                     color,
                     bgColor,
                     render,
