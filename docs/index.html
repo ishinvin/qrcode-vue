@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div id="app" class="container-fluid">
         <header
             class="d-flex flex-column justify-content-center align-items-center py-5">
             <h1 class="mb-4">
@@ -45,7 +45,7 @@
                 </a>
             </span>
         </header>
-        <div id="app" class="container">
+        <div class="container">
             <section class="row mb-4">
                 <div class="col-12 col-md-6 mb-4">
                     <h4 class="font-weight-bold">
@@ -179,7 +179,7 @@
     <script type="importmap">
         {
           "imports": {
-            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+            "vue": "https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.prod.js",
             "qrcode-vuejs": "https://unpkg.com/qrcode-vuejs@1.0.4/dist/index.es.js"
           }
         }
@@ -198,7 +198,7 @@
                 const size = ref(200)
                 const color = ref('#000000')
                 const bgColor = ref('#ffffff')
-                const render = ref(RenderOptions.SVG)
+                const render = ref(RenderOptions.CANVAS)
                 const correctLevel = ref(ErrorCorrectLevel.M)
 
                 const reset = () => {
@@ -206,7 +206,7 @@
                     size.value = 200
                     color.value = '#000000'
                     bgColor.value = '#ffffff'
-                    render.value = RenderOptions.SVG
+                    render.value = RenderOptions.CANVAS
                     correctLevel.value = ErrorCorrectLevel.M
                 }
 
