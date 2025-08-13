@@ -5,11 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>qrcode-vuejs</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <style>
         a {
             text-decoration: none;
@@ -23,8 +20,7 @@
 
 <body>
     <div id="app" class="container-fluid">
-        <header
-            class="d-flex flex-column justify-content-center align-items-center py-5">
+        <header class="d-flex flex-column justify-content-center align-items-center py-5">
             <h1 class="mb-4">
                 <strong>qrcode-vuejs</strong>
             </h1>
@@ -32,16 +28,13 @@
                 Simple QRCode Generator for Vue.js
             </h5>
             <span>
-                <a href="https://github.com/ishinvin/qrcode-vue"
-                    target="_blank">
+                <a href="https://github.com/ishinvin/qrcode-vue" target="_blank">
                     <img src="https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white"
                         alt="GitHub" />
                 </a>
                 |
-                <a href="https://www.npmjs.com/package/qrcode-vuejs"
-                    target="_blank">
-                    <img src="https://img.shields.io/badge/-npm-CB3837?style=flat&logo=npm&logoColor=white"
-                        alt="NPM" />
+                <a href="https://www.npmjs.com/package/qrcode-vuejs" target="_blank">
+                    <img src="https://img.shields.io/badge/-npm-CB3837?style=flat&logo=npm&logoColor=white" alt="NPM" />
                 </a>
             </span>
         </header>
@@ -57,15 +50,13 @@
                             <label for="inputText">
                                 <small>Text:</small>
                             </label>
-                            <input v-model="text" id="inputText"
-                                class="form-control">
+                            <input v-model="text" id="inputText" class="form-control">
                         </div>
                         <div class="d-flex align-center mb-3">
                             <label for="inputRender">
                                 <small>Render:</small>
                             </label>
-                            <select v-model="render" class="form-select"
-                                id="inputRender">
+                            <select v-model="render" class="form-select" id="inputRender">
                                 <option :value="RenderOptions.CANVAS">Canvas
                                 </option>
                                 <option :value="RenderOptions.SVG">SVG</option>
@@ -77,8 +68,7 @@
                             <label for="inputLevel">
                                 <small>Correct Level:</small>
                             </label>
-                            <select v-model="correctLevel" class="form-select"
-                                id="inputLevel">
+                            <select v-model="correctLevel" class="form-select" id="inputLevel">
                                 <option :value="ErrorCorrectLevel.L">
                                     L = Approx 7%
                                 </option>
@@ -98,8 +88,7 @@
                             <label for="inputSize">
                                 <small>Size:</small>
                             </label>
-                            <input v-model="size" id="inputSize" type="range"
-                                min="100" max="600" step="10">
+                            <input v-model="size" id="inputSize" type="range" min="100" max="600" step="10">
                             <div class="align-center" style="font-size: 14px;">
                                 &nbsp;({{size}})
                             </div>
@@ -114,32 +103,33 @@
                             <label for="inputBgColor">
                                 <small>Color Light:</small>
                             </label>
-                            <input v-model="bgColor" id="inputBgColor"
-                                type="color" class="">
+                            <input v-model="bgColor" id="inputBgColor" type="color" class="">
                         </div>
-                        <button type="button"
-                            class="btn btn-sm btn-primary text-white my-2"
-                            @click="reset">
+                        <button type="button" class="btn btn-sm btn-primary text-white my-2" @click="reset">
                             Reset
                         </button>
                         &nbsp;
-                        <button type="button"
-                            class="btn btn-sm btn-primary text-white"
-                            @click="download"
+                        <button type="button" class="btn btn-sm btn-primary text-white" @click="download"
                             v-if="render !== RenderOptions.HTML">
                             Download
                         </button>
                     </form>
-                    <div :style="{ width: `${size}px`, height: `${size}px`}"
-                        class="align-center">
-                        <v-qrcode id="qrcodeVuejs" :text="text" :size="size"
-                            :render="render" :color-dark="color"
-                            :color-light="bgColor"
-                            :correct-level="correctLevel" />
+                    <div :style="{ width: `${size}px`, height: `${size}px`}" class="align-center">
+                        <v-qrcode id="qrcodeVuejs" :text="text" :size="size" :render="render" :color-dark="color"
+                            :color-light="bgColor" :correct-level="correctLevel" />
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 mb-4">
+                    <h4 class="font-weight-bold">
+                        Buy Me a Coffee
+                    </h4>
+                    <hr>
+                    <div class="mb-4">
+                        <div style="width: 300px; margin: 0 auto;">
+                            <img src="images/khqr.jpg" alt="buy me a coffee" style="width: 100%;">
+                        </div>
+                    </div>
                     <h4 class="font-weight-bold">
                         Installation
                     </h4>
