@@ -6,6 +6,7 @@ QR code implementation based on https://github.com/kazuhikoarase/qrcode-generato
 [Online Demo](https://ishinvin.github.io/qrcode-vue/)
 
 <br>
+
 Buy Me a Coffee: [KHQR](https://ishinvin.github.io/img/khqr.jpg)
 
 ## Installation
