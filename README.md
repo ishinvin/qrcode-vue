@@ -5,6 +5,9 @@ QR code implementation based on https://github.com/kazuhikoarase/qrcode-generato
 
 [Online Demo](https://ishinvin.github.io/qrcode-vue/)
 
+<br>
+Buy Me a Coffee: [KHQR](https://ishinvin.github.io/img/khqr.jpg)
+
 ## Installation
 
 ```sh
@@ -84,3 +87,4 @@ import { VQrcode, RenderOptions, ErrorCorrectLevel } from 'qrcode-vuejs';
 | color-dark    | string            | #000000  | Foreground color of the QR             |
 | color-light   | string            | #ffffff  | Background color of the QR             |
 | correct-level | ErrorCorrectLevel | M        | QR Code has error correction capability to restore data if the code is dirty or damaged. (L = Approx 7%, M = Approx 15%, Q = Approx 25%, H = Approx 30%) |
+
