@@ -1,13 +1,10 @@
 # QRCode Generator for Vue
 
-QR code implementation based on https://github.com/kazuhikoarase/qrcode-generator
-<br>
+<!-- QR code implementation based on https://github.com/kazuhikoarase/qrcode-generator
+<br> -->
 
 [Online Demo](https://ishinvin.github.io/qrcode-vue/)
 
-<br>
-
-Buy Me a Coffee: [KHQR](https://ishinvin.github.io/img/khqr.jpg)
 
 ## Installation
 
